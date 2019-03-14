@@ -1,0 +1,18 @@
+{
+  "name": "ecosia",
+  "version": "1.0.0",
+  "description": "Ecosia assignment",
+  "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/thbono/ecosia.git"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "thbono@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
