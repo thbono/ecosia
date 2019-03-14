@@ -53,7 +53,7 @@ Or set local.ecosia.org as the domain name to cluster IP, throught /etc/hosts (L
 
 ## DevOps
 
-The deploy.sh script runs all the commands for Deployment:
+The deploy.sh script runs all the commands for deployment:
 
     sh deploy.sh
 
