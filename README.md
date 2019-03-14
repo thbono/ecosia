@@ -15,13 +15,41 @@ To test:
 
     npm test
 
-To build a Docker image:
+## Deployment
 
-    docker build -t <image> .
+To build a Docker image named trees:
 
-To run a Docker container:
+    docker build -t trees .
 
-    docker run -p 3000:3000 <image>
+To run a Kubernetes deployment with the local image:
+
+    kubectl run trees --image=trees --image-pull-policy=Never
+
+To expose it as a service:
+
+    kubectl expose deployment trees --port 80 --target-port=3000
+
+To expose the service outside the cluster throught a ingress, routing by local.ecosia.org host header
+
+    kubectl apply -f ingress.yml
+
+And to access it:
+
+    curl -H Host:local.ecosia.org http://localhost
+
+Or set local.ecosia.org as the domain name to cluster IP, throught /etc/hosts (Linux) or a DNS server, and access:
+
+    http://local.ecosia.org
+
+## API
+
+The following URIs are available:
+
+- / - root URI, with a HATEOAS description to the others
+- /trees - list of trees
+- /tress/x - tree with id x, or 404 (Not Found), if there is no such tree
+
+## Versions
 
 Tools/libraries:
 
@@ -37,3 +65,4 @@ Testing:
 Deploy:
 
 - Docker: 18.09.2
+- Kubernetes: 1.13.4
