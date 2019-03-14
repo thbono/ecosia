@@ -21,9 +21,9 @@ To test:
 
 The following URIs are available:
 
-- / - root URI, with a HATEOAS description to the others
-- /trees - list of trees
-- /trees/x - tree with id x, or 404 (Not Found), if there is no such tree
+- GET / - root URI, with a HATEOAS description to the others
+- GET /trees - list of trees
+- GET /trees/x - tree with id x, or 404 (Not Found), if there is no such tree
 
 ## Deployment
 
