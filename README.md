@@ -1,6 +1,6 @@
-# Ecosia
+# Ecosia Kubernetes assignment
 
-Ecosia assignment. You can skip to DevOps section to find the all in one script.
+You can skip to DevOps section to find the all in one script.
 
 ## Development
 
