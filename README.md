@@ -1,6 +1,8 @@
 # Ecosia
 
-Ecosia assignment
+Ecosia assignment. You can skip to DevOps section to find the all in one script.
+
+## Development
 
 To run:
 
@@ -14,6 +16,14 @@ The rest API will be available at:
 To test:
 
     npm test
+
+## API
+
+The following URIs are available:
+
+- / - root URI, with a HATEOAS description to the others
+- /trees - list of trees
+- /trees/x - tree with id x, or 404 (Not Found), if there is no such tree
 
 ## Deployment
 
@@ -33,7 +43,7 @@ To expose the service outside the cluster throught a ingress, routing by local.e
 
     kubectl apply -f ingress.yml
 
-And to access it:
+And to access it via Curl:
 
     curl -H Host:local.ecosia.org http://localhost
 
@@ -41,13 +51,11 @@ Or set local.ecosia.org as the domain name to cluster IP, throught /etc/hosts (L
 
     http://local.ecosia.org
 
-## API
+## DevOps
 
-The following URIs are available:
+The deploy.sh script runs all the commands above:
 
-- / - root URI, with a HATEOAS description to the others
-- /trees - list of trees
-- /tress/x - tree with id x, or 404 (Not Found), if there is no such tree
+    sh deploy.sh
 
 ## Versions
 
